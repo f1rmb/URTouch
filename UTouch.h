@@ -57,6 +57,7 @@ class UTouch
 		int16_t	getX();
 		int16_t	getY();
 		void	setPrecision(byte precision);
+		void    setCalibration(uint32_t calx, uint32_t caly, uint32_t cals);
 
 		void	calibrateRead();
     

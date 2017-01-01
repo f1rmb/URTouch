@@ -20,3 +20,9 @@
 #define CAL_X 0x00378F66UL
 #define CAL_Y 0x03C34155UL
 #define CAL_S 0x000EF13FUL
+//	ulong calx = 0x0204081DUL;
+//	ulong caly = 0x01E6879FUL;
+//	ulong cals = 0x0013F0EFUL;
+//#define CAL_X 0x0204081DUL
+//#define CAL_Y 0x01E6879FUL
+//#define CAL_S 0x0013F0EFUL

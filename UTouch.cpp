@@ -43,13 +43,9 @@ UTouch::UTouch(byte tclk, byte tcs, byte din, byte dout, byte irq)
 void UTouch::InitTouch(byte orientation)
 {
 	orient					= orientation;
-	_default_orientation	= CAL_S>>31;
-	touch_x_left			= (CAL_X>>14) & 0x3FFF;
-	touch_x_right			= CAL_X & 0x3FFF;
-	touch_y_top				= (CAL_Y>>14) & 0x3FFF;
-	touch_y_bottom			= CAL_Y & 0x3FFF;
-	disp_x_size				= (CAL_S>>12) & 0x0FFF;
-	disp_y_size				= CAL_S & 0x0FFF;
+    
+	setCalibration(CAL_X, CAL_Y, CAL_S);
+    
 	prec					= 10;
 
 	P_CLK	= portOutputRegister(digitalPinToPort(T_CLK));
@@ -235,6 +231,17 @@ void UTouch::setPrecision(byte precision)
 			prec=12;	// Iterations + 2
 			break;
 	}
+}
+
+void  UTouch::setCalibration(uint32_t calx, uint32_t caly, uint32_t cals)
+{
+	_default_orientation	= cals>>31;
+	touch_x_left			= (calx>>14) & 0x3FFF;
+	touch_x_right			= calx & 0x3FFF;
+	touch_y_top				= (caly>>14) & 0x3FFF;
+	touch_y_bottom			= caly & 0x3FFF;
+	disp_x_size				= (cals>>12) & 0x0FFF;
+	disp_y_size				= cals & 0x0FFF;
 }
 
 void UTouch::calibrateRead()
