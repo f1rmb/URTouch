@@ -1,4 +1,4 @@
-// UTouch_QuickDraw 
+// URTouch_QuickDraw 
 // Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
 // web: http://www.RinkyDinkElectronics.com/
 //
@@ -12,15 +12,15 @@
 //
 
 #include <UTFT.h>
-#include <UTouch.h>
+#include <URTouch.h>
 
 // Uncomment the next line for chipKit Uno32
 //UTFT        myGLCD(ITDB24D,34,35,36,37);   // Remember to change the model parameter to suit your display module!
-//UTouch      myTouch(20,21,22,23,24);
+//URTouch      myTouch(20,21,22,23,24);
 
 // Uncomment the next line for chipKit Max32
 UTFT        myGLCD(ITDB32S,82,83,84,85);   // Remember to change the model parameter to suit your display module!
-UTouch      myTouch(62,63,64,65,66);
+URTouch      myTouch(62,63,64,65,66);
 
 void setup()
 {

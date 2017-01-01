@@ -1,4 +1,4 @@
-UTouch	KEYWORD1
+URTouch	KEYWORD1
 
 InitTouch	KEYWORD2
 read	KEYWORD2

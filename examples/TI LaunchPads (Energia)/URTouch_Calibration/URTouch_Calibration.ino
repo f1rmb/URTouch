@@ -1,4 +1,4 @@
-// UTouch_Calibration 
+// URTouch_Calibration 
 // Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
 // web: http://www.RinkyDinkElectronics.com/
 //
@@ -15,7 +15,7 @@
 //
 
 #include <UTFT.h>
-#include <UTouch.h>
+#include <URTouch.h>
 
 // Define the orientation of the touch screen. Further 
 // information can be found in the instructions.
@@ -23,28 +23,12 @@
 
 // Initialize display
 // ------------------
-// Set the pins to the correct ones for your development board
-// -----------------------------------------------------------
-// Standard Arduino Uno/2009 Shield            : <display model>,19,18,17,16
-// Standard Arduino Mega/Due shield            : <display model>,38,39,40,41
-// CTE TFT LCD/SD Shield for Arduino Due       : <display model>,25,26,27,28
-// Teensy 3.x TFT Test Board                   : <display model>,23,22, 3, 4
-// ElecHouse TFT LCD/SD Shield for Arduino Due : <display model>,22,23,31,33
-//
 // Remember to change the model parameter to suit your display module!
-UTFT    myGLCD(ITDB32S,38,39,40,41);
+UTFT    myGLCD(ITDB32S,15,18,11,32);
 
 // Initialize touchscreen
 // ----------------------
-// Set the pins to the correct ones for your development board
-// -----------------------------------------------------------
-// Standard Arduino Uno/2009 Shield            : 15,10,14, 9, 8
-// Standard Arduino Mega/Due shield            :  6, 5, 4, 3, 2
-// CTE TFT LCD/SD Shield for Arduino Due       :  6, 5, 4, 3, 2
-// Teensy 3.x TFT Test Board                   : 26,31,27,28,29
-// ElecHouse TFT LCD/SD Shield for Arduino Due : 25,26,27,29,30
-//
-UTouch  myTouch( 6, 5, 4, 3, 2);
+URTouch  myTouch(31, 13, 19, 28, 17);
 
 // ************************************
 // DO NOT EDIT ANYTHING BELOW THIS LINE
@@ -171,7 +155,7 @@ void startup()
   myGLCD.setColor(255, 255, 255);
   myGLCD.setBackColor(255, 0, 0);
   myGLCD.drawLine(0, 14, dispx-1, 14);
-  myGLCD.print("UTouch Calibration", CENTER, 1);
+  myGLCD.print("URTouch Calibration", CENTER, 1);
   myGLCD.setBackColor(0, 0, 0);
 
   if (dispx==220)
@@ -218,7 +202,7 @@ void done()
   myGLCD.setColor(255, 255, 255);
   myGLCD.setBackColor(255, 0, 0);
   myGLCD.drawLine(0, 14, dispx-1, 14);
-  myGLCD.print("UTouch Calibration", CENTER, 1);
+  myGLCD.print("URTouch Calibration", CENTER, 1);
   myGLCD.setBackColor(0, 0, 0);
   
   if (dispx==220)
@@ -226,7 +210,7 @@ void done()
     myGLCD.print("To use the new calibration", LEFT, 30);
     myGLCD.print("settings you must edit the", LEFT, 42);
     myGLCD.setColor(160, 160, 255);
-    myGLCD.print("UTouchCD.h", LEFT, 54);
+    myGLCD.print("URTouchCD.h", LEFT, 54);
     myGLCD.setColor(255, 255, 255);
     myGLCD.print("file and change", 88, 54);
     myGLCD.print("the following values. The", LEFT, 66);
@@ -248,7 +232,7 @@ void done()
     myGLCD.print("To use the new calibration", LEFT, 50);
     myGLCD.print("settings you must edit the", LEFT, 62);
     myGLCD.setColor(160, 160, 255);
-    myGLCD.print("UTouchCD.h", LEFT, 74);
+    myGLCD.print("URTouchCD.h", LEFT, 74);
     myGLCD.setColor(255, 255, 255);
     myGLCD.print("file and change", 88, 74);
     myGLCD.print("the following values.", LEFT, 86);
@@ -277,7 +261,7 @@ void fail()
   myGLCD.setColor(255, 255, 255);
   myGLCD.setBackColor(255, 0, 0);
   myGLCD.drawLine(0, 14, dispx-1, 14);
-  myGLCD.print("UTouch Calibration FAILED", CENTER, 1);
+  myGLCD.print("URTouch Calibration FAILED", CENTER, 1);
   myGLCD.setBackColor(0, 0, 0);
   
   myGLCD.print("Unable to read the position", LEFT, 30);

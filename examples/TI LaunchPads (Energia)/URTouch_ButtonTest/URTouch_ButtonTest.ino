@@ -1,4 +1,4 @@
-// UTouch_ButtonTest 
+// URTouch_ButtonTest 
 // Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
 // web: http://www.RinkyDinkElectronics.com/
 //
@@ -12,18 +12,19 @@
 //
 
 #include <UTFT.h>
-#include <UTouch.h>
+#include <URTouch.h>
+
+// Initialize display
+// ------------------
+// Remember to change the model parameter to suit your display module!
+UTFT    myGLCD(ITDB32S,15,18,11,32);
+
+// Initialize touchscreen
+// ----------------------
+URTouch  myTouch(31, 13, 19, 28, 17);
 
 // Declare which fonts we will be using
 extern uint8_t BigFont[];
-
-// Uncomment the next line for chipKit Uno32
-//UTFT        myGLCD(ITDB24D,34,35,36,37);   // Remember to change the model parameter to suit your display module!
-//UTouch      myTouch(20,21,22,23,24);
-
-// Uncomment the next line for chipKit Max32
-UTFT        myGLCD(ITDB32S,82,83,84,85);   // Remember to change the model parameter to suit your display module!
-UTouch      myTouch(62,63,64,65,66);
 
 int x, y;
 char stCurrent[20]="";

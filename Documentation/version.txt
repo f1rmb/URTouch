@@ -17,3 +17,5 @@ Version:
 	1.24	05 May 2014  -  added support for DisplayModule DM-TFT24-104 and DM-TFT28-103
 				added support for Coldtears 5" and 7" CPLD modules
 	1.30	17 May 2015  -  added support TI CC3200 LaunchPad
+	2.00	19 Jun 2016  -  changed the name of the library to URTouch due to trademark issues
+	2.01	12 Jul 2016  -  added support for the new 3.2" (Rev2 ILI9341-based) display module from Coldtears

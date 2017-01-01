@@ -1,6 +1,6 @@
 // Results becomes inaccurate if direct port manipulation is used hence the use of digitalWrite() and digitalRead()
 
-void UTouch::touch_WriteData(byte data)
+void URTouch::touch_WriteData(byte data)
 {
 	byte temp;
 
@@ -19,7 +19,7 @@ void UTouch::touch_WriteData(byte data)
 	}
 }
 
-word UTouch::touch_ReadData()
+word URTouch::touch_ReadData()
 {
 	word data = 0;
 
@@ -35,12 +35,12 @@ word UTouch::touch_ReadData()
 }
 
 #if defined(ENERGIA)
-	volatile uint32_t* UTouch::portOutputRegister(int value)
+	volatile uint32_t* URTouch::portOutputRegister(int value)
 	{
 		return portBASERegister(value);
 	}
 
-	volatile uint32_t* UTouch::portInputRegister(int value)
+	volatile uint32_t* URTouch::portInputRegister(int value)
 	{
 		return portBASERegister(value);
 	}

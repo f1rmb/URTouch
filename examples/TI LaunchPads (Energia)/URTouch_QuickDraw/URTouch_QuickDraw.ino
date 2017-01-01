@@ -1,4 +1,4 @@
-// UTouch_QuickDraw 
+// URTouch_QuickDraw 
 // Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
 // web: http://www.RinkyDinkElectronics.com/
 //
@@ -12,7 +12,7 @@
 //
 
 #include <UTFT.h>
-#include <UTouch.h>
+#include <URTouch.h>
 
 // Initialize display
 // ------------------
@@ -21,7 +21,7 @@ UTFT    myGLCD(ITDB32S,15,18,11,32);
 
 // Initialize touchscreen
 // ----------------------
-UTouch  myTouch(31, 13, 19, 28, 17);
+URTouch  myTouch(31, 13, 19, 28, 17);
 
 void setup()
 {

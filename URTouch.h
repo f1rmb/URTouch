@@ -1,6 +1,6 @@
 /*
-  UTouch.h - Arduino/chipKit library support for Color TFT LCD Touch screens 
-  Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
+  URTouch.h - Arduino/chipKit library support for Color TFT LCD Touch screens 
+  Copyright (C)2016 Rinky-Dink Electronics, Henning Karlsen. All right reserved
   
   Basic functionality of this library are based on the demo-code provided by
   ITead studio.
@@ -20,10 +20,10 @@
   examples and tools supplied with the library.
 */
 
-#ifndef UTouch_h
-#define UTouch_h
+#ifndef URTouch_h
+#define URTouch_h
 
-#define UTOUCH_VERSION	130
+#define URTOUCH_VERSION	201
 
 #if defined(__AVR__)
 	#include "Arduino.h"
@@ -44,12 +44,12 @@
 #define PREC_HI				3
 #define PREC_EXTREME		4
 
-class UTouch
+class URTouch
 {
 	public:
 		int16_t	TP_X ,TP_Y;
 
-				UTouch(byte tclk, byte tcs, byte tdin, byte dout, byte irq);
+				URTouch(byte tclk, byte tcs, byte tdin, byte dout, byte irq);
 
 		void	InitTouch(byte orientation = LANDSCAPE);
 		void	read();

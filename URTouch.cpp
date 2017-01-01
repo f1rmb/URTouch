@@ -1,6 +1,6 @@
 /*
-  UTouch.cpp - Arduino/chipKit library support for Color TFT LCD Touch screens 
-  Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
+  URTouch.cpp - Arduino/chipKit library support for Color TFT LCD Touch screens 
+  Copyright (C)2016 Rinky-Dink Electronics, Henning Karlsen. All right reserved
   
   Basic functionality of this library are based on the demo-code provided by
   ITead studio.
@@ -20,8 +20,8 @@
   examples and tools supplied with the library.
 */
 
-#include "UTouch.h"
-#include "UTouchCD.h"
+#include "URTouch.h"
+#include "URTouchCD.h"
 
 #if defined(__AVR__)
 	#include "hardware/avr/HW_AVR.inc"
@@ -31,7 +31,7 @@
 	#include "hardware/arm/HW_ARM.inc"
 #endif
 
-UTouch::UTouch(byte tclk, byte tcs, byte din, byte dout, byte irq)
+URTouch::URTouch(byte tclk, byte tcs, byte din, byte dout, byte irq)
 {
 	T_CLK	= tclk;
 	T_CS	= tcs;
@@ -40,7 +40,7 @@ UTouch::UTouch(byte tclk, byte tcs, byte din, byte dout, byte irq)
 	T_IRQ	= irq;
 }
 
-void UTouch::InitTouch(byte orientation)
+void URTouch::InitTouch(byte orientation)
 {
 	orient					= orientation;
     
@@ -71,7 +71,7 @@ void UTouch::InitTouch(byte orientation)
 	sbi(P_IRQ, B_IRQ);
 }
 
-void UTouch::read()
+void URTouch::read()
 {
 	unsigned long tx=0, temp_x=0;
 	unsigned long ty=0, temp_y=0;
@@ -146,7 +146,7 @@ void UTouch::read()
 	}
 }
 
-bool UTouch::dataAvailable()
+bool URTouch::dataAvailable()
 {
 	bool avail;
 	pinMode(T_IRQ,  INPUT);
@@ -155,7 +155,7 @@ bool UTouch::dataAvailable()
 	return avail;
 }
 
-int16_t UTouch::getX()
+int16_t URTouch::getX()
 {
 	long c;
 
@@ -183,7 +183,7 @@ int16_t UTouch::getX()
 	return c;
 }
 
-int16_t UTouch::getY()
+int16_t URTouch::getY()
 {
 	int c;
 
@@ -211,7 +211,7 @@ int16_t UTouch::getY()
 	return c;
 }
 
-void UTouch::setPrecision(byte precision)
+void URTouch::setPrecision(byte precision)
 {
 	switch (precision)
 	{
@@ -233,7 +233,7 @@ void UTouch::setPrecision(byte precision)
 	}
 }
 
-void  UTouch::setCalibration(uint32_t calx, uint32_t caly, uint32_t cals)
+void  URTouch::setCalibration(uint32_t calx, uint32_t caly, uint32_t cals)
 {
 	_default_orientation	= cals>>31;
 	touch_x_left			= (calx>>14) & 0x3FFF;
@@ -244,7 +244,7 @@ void  UTouch::setCalibration(uint32_t calx, uint32_t caly, uint32_t cals)
 	disp_y_size				= cals & 0x0FFF;
 }
 
-void UTouch::calibrateRead()
+void URTouch::calibrateRead()
 {
 	unsigned long tx=0;
 	unsigned long ty=0;

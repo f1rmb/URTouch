@@ -1,4 +1,4 @@
-// UTouch_ButtonTest 
+// URTouch_ButtonTest 
 // Copyright (C)2015 Rinky-Dink Electronics, Henning Karlsen. All right reserved
 // web: http://www.RinkyDinkElectronics.com/
 //
@@ -12,7 +12,7 @@
 //
 
 #include <UTFT.h>
-#include <UTouch.h>
+#include <URTouch.h>
 
 // Initialize display
 // ------------------
@@ -37,7 +37,7 @@ UTFT    myGLCD(ITDB32S,38,39,40,41);
 // Teensy 3.x TFT Test Board                   : 26,31,27,28,29
 // ElecHouse TFT LCD/SD Shield for Arduino Due : 25,26,27,29,30
 //
-UTouch  myTouch( 6, 5, 4, 3, 2);
+URTouch  myTouch( 6, 5, 4, 3, 2);
 
 // Declare which fonts we will be using
 extern uint8_t BigFont[];

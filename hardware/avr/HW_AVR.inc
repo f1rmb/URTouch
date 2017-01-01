@@ -1,4 +1,4 @@
-void UTouch::touch_WriteData(byte data)
+void URTouch::touch_WriteData(byte data)
 {
 	byte temp;
 
@@ -17,7 +17,7 @@ void UTouch::touch_WriteData(byte data)
 	}
 }
 
-word UTouch::touch_ReadData()
+word URTouch::touch_ReadData()
 {
 	word data = 0;
 

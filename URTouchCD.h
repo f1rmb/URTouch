@@ -1,8 +1,8 @@
-// UTouchCD.h
+// URTouchCD.h
 // ----------
 //
 // Since there are slight deviations in all touch screens you should run a
-// calibration on your display module. Run the UTouch_Calibration sketch
+// calibration on your display module. Run the URTouch_Calibration sketch
 // that came with this library and follow the on-screen instructions to
 // update this file.
 //
