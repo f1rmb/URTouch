@@ -21,7 +21,6 @@
 */
 
 #include "URTouch.h"
-#include "URTouchCD.h"
 
 #if defined(__AVR__)
 	#include "hardware/avr/HW_AVR.inc"
