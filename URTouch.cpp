@@ -40,11 +40,11 @@ URTouch::URTouch(byte tclk, byte tcs, byte din, byte dout, byte irq)
 	T_IRQ	= irq;
 }
 
-void URTouch::InitTouch(byte orientation)
+void URTouch::InitTouch(byte orientation, unsigned long cal_x = CAL_X, unsigned long cal_y = CAL_Y, unsigned long cal_s = CAL_S)
 {
 	orient					= orientation;
     
-	setCalibration(CAL_X, CAL_Y, CAL_S);
+	setCalibration(cal_x, cal_y, cal_s);
     
 	prec					= 10;
 
