@@ -39,7 +39,7 @@ URTouch::URTouch(byte tclk, byte tcs, byte din, byte dout, byte irq)
 	T_IRQ	= irq;
 }
 
-void URTouch::InitTouch(byte orientation, unsigned long cal_x = CAL_X, unsigned long cal_y = CAL_Y, unsigned long cal_s = CAL_S)
+void URTouch::InitTouch(byte orientation, uint32_t cal_x, uint32_t cal_y, uint32_t cal_s)
 {
 	orient					= orientation;
     

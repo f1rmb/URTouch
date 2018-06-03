@@ -50,9 +50,9 @@ class URTouch
 	public:
 		int16_t	TP_X ,TP_Y;
 
-				URTouch(byte tclk, byte tcs, byte tdin, byte dout, byte irq);
+		URTouch(byte tclk, byte tcs, byte tdin, byte dout, byte irq);
 
-		void	InitTouch(byte orientation = LANDSCAPE, unsigned long cal_x = CAL_X, unsigned long cal_y = CAL_Y, unsigned long cal_s = CAL_S);
+		void	InitTouch(byte orientation = LANDSCAPE, uint32_t cal_x = CAL_X, uint32_t cal_y = CAL_Y, uint32_t cal_s = CAL_S);
 		void	read();
 		bool	dataAvailable();
 		int16_t	getX();
