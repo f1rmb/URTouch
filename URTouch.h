@@ -23,7 +23,7 @@
 #ifndef URTouch_h
 #define URTouch_h
 
-#define URTOUCH_VERSION	201
+#define URTOUCH_VERSION	202
 
 #if defined(__AVR__)
 	#include "Arduino.h"
@@ -35,6 +35,7 @@
 	#include "Arduino.h"
 	#include "hardware/arm/HW_ARM_defines.h"
 #endif
+#include "URTouchCD.h"
 
 #define PORTRAIT			0
 #define LANDSCAPE			1
@@ -51,7 +52,7 @@ class URTouch
 
 				URTouch(byte tclk, byte tcs, byte tdin, byte dout, byte irq);
 
-		void	InitTouch(byte orientation = LANDSCAPE);
+		void	InitTouch(byte orientation = LANDSCAPE, unsigned long cal_x = CAL_X, unsigned long cal_y = CAL_Y, unsigned long cal_s = CAL_S);
 		void	read();
 		bool	dataAvailable();
 		int16_t	getX();
